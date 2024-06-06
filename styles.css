@@ -1,0 +1,265 @@
+html {
+    background-color: #020659;
+}
+body {
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 375px;
+}
+header {
+    background: linear-gradient(to left,#000000,#2104d9);
+    color: #FFFFFF;
+    margin-top: 60px;
+}
+nav {
+    width: 375px;
+    background-color: #030A8C;
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+    height: 50px;
+}
+nav ul {
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+nav li a{
+    display: block;
+    padding-right: 20px;
+    text-decoration: none;
+    color:#FFFFFF;
+}
+nav a {
+    text-transform: uppercase;
+}
+label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+label span {
+    background-color: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+}
+label span:before, label span:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+label span:before {
+    top: 5px;
+}
+label span:after {
+    top: -5px;
+}
+input {
+    display: none;
+}
+input:checked ~ ul {
+    max-height: 500px;
+}
+input:checked ~ label span {
+    background: transparent;
+}
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
+.home {
+    text-transform:none ;
+}
+a:hover {
+    background: #590242;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+h1 {
+    text-transform: uppercase;
+    font-size: 1.25em;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+h2 {
+    padding-left: 15px;
+}
+.headerp{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+h3 {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+h2, h3 {
+    font-size: 1em;
+    text-transform: uppercase;
+    color: #590242;
+}
+h4 {
+    text-align: center;
+}
+p, dl, dd {
+    font-size: 1em;
+}
+footer p {
+    font-size: .75em;
+    text-align: center;
+    color: #590242;
+    padding-bottom: 10px;
+}
+.scroll {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    overflow-x: scroll;
+    width: 375px;
+}
+.scroll section {
+    margin: 10px;
+    position: relative;
+}
+.scroll div {
+    position: absolute;
+    top: 251px;
+    background-color: rgba(255,255,255,.75);
+    padding: 5px;
+    height: 50px;
+    width: 350px;
+}
+dl {
+    display: flex;
+}
+dt {
+    position: absolute;
+    padding-right: 5px;
+    bottom: 5px;
+    font-style: italic;
+}
+dd {
+    position: absolute;
+    padding-left: 15px;
+    padding-right: 15px;
+    bottom: 5px;
+    font-style: italic;
+}
+dt, dl {
+    color: #590242;
+}
+audio {
+    position: absolute;
+    bottom: 150px;
+    left: 5px;
+}
+#trending ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 15px #590242;
+}
+#trending ::-webkit-scrollbar-thumb {
+    background: #590242;
+    border-radius: 5px;
+}
+#trending ::-webkit-scrollbar-thumb:hover {
+    background: #020659;
+}
+.pscroll {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    overflow-x: auto;
+    overflow-y: scroll;
+    background-color: #2699fb;
+    color: #FFFFFF;
+    height: 550px;
+}
+.pscroll img {
+    float: left;
+    margin: 10px
+}
+.pscroll p {
+    text-align: center;
+}
+.cscroll {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    overflow-x: auto;
+    overflow-y: scroll;
+    background-color: #030A8c;
+    color: #FFFFFF;
+    height: 550px;
+}
+.cscroll img {
+    float: left;
+    margin: 10px
+}
+.cscroll p {
+    text-align: center;
+}
+button {
+    background-color: #590242; 
+    width: 150px; 
+    height: 50px;
+    border-radius: 10px;
+}
+button span{
+    color: #FFFFFF;
+    font-size: 17px;
+}
+button:hover{
+    background-color: #020659;
+}
+#playlist {
+    background-color: #2699fb;
+}
+@media (min-width: 834px){
+    body{
+        width: 834px;
+    }
+    nav {
+        width:834px;
+    }
+    nav ul{
+        overflow: visible;
+        position: absolute;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    nav li a{
+        padding-left: 30px;
+    }
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    #trending {
+        grid-column: 1/3;
+    }
+    label span, input {
+        display: none;
+    }
+    #btntrnd {
+        position: relative;
+        left: 650px;
+    }
+    .scroll {
+        width: 834px;
+    }
+}
